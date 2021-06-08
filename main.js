@@ -27,6 +27,7 @@ __webpack_require__.r(__webpack_exports__);
 // The list of file replacements can be found in `angular.json`.
 const environment = {
     production: false,
+    apiEndpoint: 'http://localhost:8000',
 };
 /*
  * For easier debugging in development mode, you can import the following file
@@ -274,9 +275,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const routes = [
-    { path: '', pathMatch: 'full', redirectTo: '/welcome' },
     {
-        path: 'welcome',
+        path: '',
+        pathMatch: 'full',
+        loadChildren: () => __webpack_require__.e(/*! import() | pages-welcome-welcome-module */ "pages-welcome-welcome-module").then(__webpack_require__.bind(null, /*! ./pages/welcome/welcome.module */ "TtBp")).then((m) => m.WelcomeModule),
+    },
+    {
+        path: 'home',
         loadChildren: () => __webpack_require__.e(/*! import() | pages-welcome-welcome-module */ "pages-welcome-welcome-module").then(__webpack_require__.bind(null, /*! ./pages/welcome/welcome.module */ "TtBp")).then((m) => m.WelcomeModule),
     },
 ];
